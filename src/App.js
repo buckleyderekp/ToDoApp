@@ -1,12 +1,12 @@
 import React from 'react';
 import { Route, Routes } from "react-router-dom";
-import { TodoDashboard } from "./components/todoDashboard"
+import { TodoDashboard } from "./todoDashboard"
 
 function App() {
   return (
       <div className="App">
         <Routes>
-          <Route path="/dashboard"  element={<TodoDashboard/>}/> 
+          <Route path="/"  element={<TodoDashboard/>}/> 
         </Routes>
       </div>
   );

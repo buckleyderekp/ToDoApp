@@ -64,7 +64,7 @@ export const UserProvider = (props) => {
       .then(exists => {
         if (exists && exists.password === values.password) {
           localStorage.setItem("user", exists.id)
-          props.toggle()
+         // props.toggle()
         }  else if (!exists) {
           window.alert("User account does not exist")
         }
@@ -94,7 +94,7 @@ export const UserProvider = (props) => {
       })
   }
   useEffect(() => {
-    getUsers()
+    handleLogin({email: "buckleyderekp@gmail.com", password: "123456"})
   }, [])
 
 
