@@ -1,9 +1,5 @@
 import React from 'react';
-import logo from './logo.svg';
-import * as firebase from "firebase/app";
-import { Route, Redirect, Routes } from "react-router-dom";
-import Login from "./components/login";
-import Register from "./components/register"
+import { Route, Routes } from "react-router-dom";
 import { TodoDashboard } from "./components/todoDashboard"
 
 function App() {
@@ -11,8 +7,6 @@ function App() {
       <div className="App">
         <Routes>
           <Route path="/dashboard"  element={<TodoDashboard/>}/> 
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
         </Routes>
       </div>
   );

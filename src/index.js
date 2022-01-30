@@ -3,19 +3,15 @@ import { BrowserRouter } from 'react-router-dom';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import { Provider } from 'react-redux'
 import reportWebVitals from './reportWebVitals';
-import { userProvider } from "./components/userProvider"
+import { UserProvider } from "./components/userProvider"
 
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
-      <userProvider>
-        {/* <Provider> */}
-        {/* store={store}> */}
+      <UserProvider>
         <App />
-        {/* </Provider> */}
-      </userProvider>
+      </UserProvider>
     </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
