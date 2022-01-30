@@ -4,21 +4,16 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { UserProvider } from "./components/users/userProvider"
 import { Provider } from 'react-redux'
 import store from "./store";
 import { login } from "./actionCreater";
 
-store.dispatch(login());
-console.log(store.getState())
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
-      <UserProvider>
         <Provider store={store}>
           <App />
         </Provider>
-      </UserProvider>
     </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
