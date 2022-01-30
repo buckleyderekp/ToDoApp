@@ -3,6 +3,7 @@ import { Route, Routes } from "react-router-dom";
 import  TodoDashboard  from "./todoDashboard";
 import { Provider } from "react-redux";
 import store from './store';
+import "./App.scss"
 
 //this component manages the routing for the app. MVP will consist of the main dashboard but is intended to be built out 
 //to include other routes like /login /register /settings
