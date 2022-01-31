@@ -1,7 +1,19 @@
 .taskDescription{
     font-size: smaller;
     color: #8b8b8b;
+    text-align: left;
+    margin-left: 2%;
 }
 .taskListItemContainer{
-    margin-top: 30%;
+    margin-top: 5%;
+    text-align: left;
+    margin-left: 10%;
+    display: flex;
+}
+.listItemCheckbox{
+    width: 4%;
+    border-radius: 20%;
+    border-style: solid;
+    border-width: thin;
+    border-color: #8b8b8b;
 }

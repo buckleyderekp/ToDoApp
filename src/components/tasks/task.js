@@ -5,7 +5,7 @@ import { BsCheck } from "react-icons/bs"
 const Task = task => {
     return (
         <div className="taskListItemContainer">
-            <div></div>
+            <div className="listItemCheckbox"></div>
             <div className="taskDescription"> {task.task.description}</div>
         </div>
     )

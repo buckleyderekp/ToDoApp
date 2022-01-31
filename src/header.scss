@@ -6,8 +6,11 @@
     height: 100%;
     width: 50%;
 }
-.notActive{
+.notActiveRight{
     background-color: #fafafa;
-    border-bottom: #cacaca;
-    border-radius: 0% 18% 0% 0%;
+    border-radius:  0% 18% 0% 0%;
+}
+.notActiveLeft{
+    background-color: #fafafa;
+    border-radius:  18% 0% 0% 0%;
 }

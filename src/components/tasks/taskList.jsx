@@ -7,7 +7,7 @@ export const TaskList = ({ tasks }) => {
     console.log(tasks)
     return (
         <div className="taskListContainer">
-            {tasks.map((task) => {
+            {tasks && tasks.map((task) => {
                 return (
                     <Task task={task}/>
                 )
