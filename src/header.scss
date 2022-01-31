@@ -1,7 +1,13 @@
 .header{
     height: 15%;
+    display: flex;
 }
 .header_tab{
     height: 100%;
     width: 50%;
+}
+.notActive{
+    background-color: #fafafa;
+    border-bottom: #cacaca;
+    border-radius: 0% 18% 0% 0%;
 }

@@ -7,10 +7,10 @@ import { actionTypes } from "./actionTypes";
 import { TaskList } from "./components/tasks/taskList";
 import "./todoDashboard.scss"
 import Header from "./header";
+import Footer from "./footer";
 
 
-//this component will hold the lists of tasks. Both lists of tasks will be displayed by the same component but the props past to the list component will 
-//change based on the selection of the user. The active list will be managed in this component with useState
+//this component will handle dashboard components such as the tabs, main container, list and button to open form 
 const TodoDashboard = props => {
     const tasks = useSelector(state => state.tasks.tasks)
     const dispatch = useDispatch();
@@ -21,6 +21,7 @@ const TodoDashboard = props => {
             <div className="task_container">
                 <Header/>
                 <TaskList tasks={tasks} />
+                <Footer/>
             </div>
             {/* <button onClick={()=> store.dispatch(actions.login())} >Log Out</button> */}
         </>
