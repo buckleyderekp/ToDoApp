@@ -1,0 +1,18 @@
+//styles for tabs at the top of the dashboard
+
+.header{
+    height: 15%;
+    display: flex;
+}
+.header_tab{
+    height: 100%;
+    width: 50%;
+}
+.notActiveRight{
+    background-color: #fafafa;
+    border-radius:  0% 18% 0% 0%;
+}
+.notActiveLeft{
+    background-color: #fafafa;
+    border-radius:  18% 0% 0% 0%;
+}
