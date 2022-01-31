@@ -2,6 +2,7 @@ import React from "react";
 import { BsListTask, BsCalendarCheck } from "react-icons/bs";
 import "./header.scss";
 
+//the purpose of this component is to manage the tabs at the top of the dashboard 
 const Header = ({ setActiveList, activeList }) => {
     return (
         <div className="header">

@@ -17,27 +17,28 @@ const TasksForm = () => {
                 category: Yup.string().required("Required"),
             })}
             onSubmit={(values) => console.log(values)}>
-            {({ values, errors, touched, handleChange, handleSubmit }) => (
+            {({ values, errors, touched, handleChange, handleSubmit }) => {
+                return (
                 <form onSubmit={handleSubmit} className="formContainer">
                     <div className="formField">
                         <label>Description </label>
                         <input
                             type="text"
                             name="description"
-                            //value={values.description}
+                            value={values.description}
                             onChange={() => handleChange()}
                         />
                         {errors.description && touched.description ? <div className="error">{errors.description}</div> : null}
                     </div>
                     <div className="formField">
                         <label>Category</label>
-                        <input type="text" name="category" value={values.category}></input>
+                        <input type="text" name="category" value={values.category} onChange={handleChange}></input>
                         {errors.category && touched.category ? <div className="error">{errors.category}</div> : null}
                     </div>
                     <button className="submitButton" type="submit">submit</button>
                     <button className="cancelButton">cancel</button>
                 </form>
-            )}
+            )}}
         </Formik>
     )
 

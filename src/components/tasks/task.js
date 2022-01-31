@@ -1,7 +1,7 @@
 import React from "react";
 import "./task.scss";
-import { BsCheck } from "react-icons/bs"
 
+//handles displaying one task item in the tasklist
 const Task = task => {
     return (
         <div className="taskListItemContainer">
