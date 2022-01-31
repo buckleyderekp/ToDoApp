@@ -11,7 +11,6 @@ export const TaskList = ({ tasks }) => {
                 return (
                     <Task task={task}/>
                 )
-
             })}
         </div>
 

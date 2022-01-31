@@ -38,5 +38,5 @@ const mapDispatchToProps = dispatch =>{
     }
 }
 
-export default connect(mapDispatchToProps, mapDispatchToProps)(TodoDashboard);
+export default connect(mapStateToProps, mapDispatchToProps)(TodoDashboard);
 
