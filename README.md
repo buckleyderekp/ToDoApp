@@ -2,7 +2,7 @@
 
 1. Clone repo to your machine
 2. Run npm install to get necessary packages
-3. Clone JSON file in Takeaways-API repo https://github.com/buckleyderekp/
+3. Clone JSON file in Takeaways-API repo https://github.com/buckleyderekp/ToDoAppApi
 4. if you do not have json serve installed you will need to install it using the command: 
 ``` bash
 npm install -g json-server
