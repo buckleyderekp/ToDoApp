@@ -10,7 +10,7 @@ function userReducer(state = initialState, action) {
             user: {
                 name: "Derek Buckley",
                 email: "buckleyderekp@gmail.com",
-                userId: 1,
+                id: 1,
                 userType: "Admin"
             }
         })

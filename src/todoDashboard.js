@@ -1,8 +1,7 @@
 
 import React, { useEffect, useState } from "react";
-import { useSelector, useDispatch, connect } from "react-redux";
+import { connect } from "react-redux";
 import * as actions from "./actionCreater";
-import { actionTypes } from "./actionTypes";
 import { TaskList } from "./components/tasks/taskList";
 import "./todoDashboard.scss"
 import Header from "./header";
@@ -10,12 +9,14 @@ import Footer from "./footer";
 
 
 //this component will handle dashboard components such as the tabs, main container, list and button to open form 
-const TodoDashboard = ({ tasksData, fetchTasks }) => {
+const TodoDashboard = ({ tasksData, fetchTasks, login }) => {
     //handle opening and closing of form modal
     const [modal, setModal] = useState(false)
     const toggle = () => setModal(!modal)
     //dispatch action to fetch tasks on payload
     useEffect(() => {
+        //"login" user on page load. This user is hard coded but will be moved to database and and be dynamic when login and registration is complete
+        login()
         fetchTasks()
     }, [])
     //manage list of tasks for completed or notCompleted
@@ -46,7 +47,8 @@ const mapStateToProps = state => {
 //make fetchTasks part of the props for this component
 const mapDispatchToProps = dispatch => {
     return {
-        fetchTasks: () => dispatch(actions.fetchTasks())
+        fetchTasks: () => dispatch(actions.fetchTasks()),
+        login: () => dispatch(actions.login())
     }
 }
 // connect to redux store

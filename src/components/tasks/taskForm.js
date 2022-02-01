@@ -1,47 +1,70 @@
 import React from "react";
-import { Formik } from 'formik';
+import { Formik, Field, Form } from 'formik';
+import { useSelector, useDispatch, connect } from "react-redux";
+import * as actions from "../../actionCreater";
 import * as Yup from 'yup';
 import "./taskForm.scss";
 
 //this component handles the form to add and will eventually edit tasks
-const TasksForm = () => {
+const TasksForm = ({modal, toggle, addTask, user}) => {
+    const userInfo = user;
     return (
         <Formik
             initialValues={{
                 description: "",
                 category: "",
                 completed: false,
+                userId: userInfo.id
             }}
+            // for validation
             validationSchema={Yup.object().shape({
                 description: Yup.string().required("Required"),
                 category: Yup.string().required("Required"),
             })}
-            onSubmit={(values) => console.log(values)}>
+            enableReinitialize
+            onSubmit={(values) => {
+                addTask(values)
+                toggle()      
+            }}>
             {({ values, errors, touched, handleChange, handleSubmit }) => {
                 return (
-                <form onSubmit={handleSubmit} className="formContainer">
+                <Form onSubmit={handleSubmit} className="formContainer">
                     <div className="formField">
                         <label>Description </label>
-                        <input
+                        <Field
                             type="text"
                             name="description"
-                            value={values.description}
-                            onChange={() => handleChange()}
+                            onChange={handleChange}
                         />
+                        {/* display errors if there are any and if that input has been touched */}
                         {errors.description && touched.description ? <div className="error">{errors.description}</div> : null}
                     </div>
                     <div className="formField">
                         <label>Category</label>
-                        <input type="text" name="category" value={values.category} onChange={handleChange}></input>
+                        <Field type="text" name="category" value={values.category} onChange={handleChange}/>
+                        {/* display errors if there are any and if that input has been touched */}
                         {errors.category && touched.category ? <div className="error">{errors.category}</div> : null}
                     </div>
                     <button className="submitButton" type="submit">submit</button>
-                    <button className="cancelButton">cancel</button>
-                </form>
+                    <button className="cancelButton" onClick={() => toggle()}>cancel</button>
+                </Form>
             )}}
         </Formik>
     )
 
 }
 
-export default TasksForm;
+//make user part of the props for this component
+const mapStateToProps = state => {
+    return {
+        user: state.user
+    }
+} 
+//make addTask part of the props for this component
+const mapDispatchToProps = dispatch => {
+    return {
+        addTask: () => dispatch(actions.addTask())
+    }
+}
+// connect to redux store
+export default connect(mapStateToProps, mapDispatchToProps)(TasksForm);

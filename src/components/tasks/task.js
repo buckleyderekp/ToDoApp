@@ -4,7 +4,7 @@ import "./task.scss";
 //handles displaying one task item in the tasklist
 const Task = task => {
     return (
-        <div className="taskListItemContainer">
+        <div className="taskListItemContainer" key={task.Id}>
             <div className="listItemCheckbox"></div>
             <div className="taskDescription"> {task.task.description}</div>
         </div>

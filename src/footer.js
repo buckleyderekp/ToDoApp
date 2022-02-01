@@ -24,8 +24,8 @@ const Footer = ({modal, toggle}) =>{
         <div className="footer">
             <AiFillPlusCircle className="addTaskButton" onClick={() => toggle()} style={plusButtonStyle}/>
         </div>
-        <Modal style={customStyles} isOpen={modal} onRequestClose={toggle}>
-            <TasksForm/>
+        <Modal ariaHideApp={false} style={customStyles} isOpen={modal} onRequestClose={toggle}>
+            <TasksForm modal={modal} toggle={toggle}/>
         </Modal>
         </div>
     )
