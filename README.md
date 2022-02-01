@@ -1,3 +1,22 @@
+### To run project
+
+1. Clone repo to your machine
+2. Run npm install to get necessary packages
+3. Clone JSON file in Takeaways-API repo https://github.com/buckleyderekp/ToDoAppApi
+4. if you do not have json serve installed you will need to install it using the command: 
+``` bash
+npm install -g json-server
+```
+4. In one terminal CD to api directory and run JSON server to port 8088 using command: 
+``` bash 
+json-server -p 8088 -w database.json
+```
+5. In another terminal window CD to Takeaways directory and begin application using the comman: 
+``` bash 
+npm start
+```
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
